@@ -162,5 +162,34 @@ Complex fulcrumPoint = Complex.FromRealNumber(23.0)
 ```
 Consider enforcing the use of this factory method by making the corresponding constructor private.
 
+### 10. Extra
+
+#### 10.1 Don't Be Cute 
+Don't tell little culture-dependent jokes like *eatMyShorts()* to mean *abort()*.
+
+#### 10.2 Pick One Word per Concept
+Pick one word for one abstract concept and stick with it. For instance, it's confusing to have *fetch*, *retrieve*,
+and *get* as equivalent methods or different classes. Likewise it's confusing to have a *controller*, a *manager*
+and a *driver* in the same codebase.
+
+#### 10.3 Pick Different Words for Different Concepts
+Variables, methods or classes with the same words should be semantically the same. Don't use *add* for a method
+that will do a concatenation and for another method that will put a single parameter into a collection. It would 
+be better to use a name like *append* or *insert*.
+
+#### 10.4 Add Meaningful Context
+Few names are meaningful in themselves. You need to place names in context by enclosing them in well-named
+classes, functions or namespaces. Imagine that you have the variables named *firstName*, *lastName*, *street*, 
+*houseNumber*, *city* and *state*. Together it's pretty clear they form an address. But what if you saw
+the *state* variable being used alone in a method? 
+
+#### 10.5 Don't Add Gratuitous Context
+Don't add information to the variables that are common to most of the variables. In an imaginary application
+called "Gas Station Deluxe", it is a very bad idea to prefix every variable with *GSD*. You type G and press
+the completion key and are rewarded with a mile-long list of every class in the system. Why make it so hard for the 
+IDE to help you?
+
+
+
 
 

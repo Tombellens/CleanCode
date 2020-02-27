@@ -45,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582789781085</updated>
-      <workItem from="1582789782870" duration="8913000" />
+      <workItem from="1582789782870" duration="10334000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed title of chapter2">
       <created>1582795194623</created>
@@ -82,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582805700146</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added section 7,8 and 9">
+      <created>1582809919756</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582809919756</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,20 +101,21 @@
     <MESSAGE value="Added the section about disinformation" />
     <MESSAGE value="Added section 3, 4 and 5" />
     <MESSAGE value="Added section 6: &quot;Avoid encodings&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added section 6: &quot;Avoid encodings&quot;" />
+    <MESSAGE value="Added section 7,8 and 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added section 7,8 and 9" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1582789792725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="72" key="#Project_Structure/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1582789792725" />
-    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1582805699147">
+    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1582809918696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1582805699147" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1582805708111">
+    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1582809918696" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1582809937090">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1582805708111" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1582809937090" />
   </component>
 </project>
