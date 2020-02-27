@@ -1,4 +1,4 @@
-##Meaningful Names
+## CHAPTER 2: Meaningful Names
 
 1. Use Intention-Revealing Names
 2. Avoid Disinformation
