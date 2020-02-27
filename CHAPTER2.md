@@ -107,3 +107,25 @@ The author's personal preference is that single letter names can ONLY be used as
 local variable inside short methods. 
 
 The length of a name should correspond to the size of its scope. 
+
+### 6. Avoid Encodings
+
+We have enough encodings to deal with, without adding more to our burden. Encoding type or scope
+information into names simply adds an extra burden of deciphering. Encoded names are seldom 
+pronounceable and are easy to miss-type.
+
+####    6.1 Hungarian Notation
+Java Programmers don't need type encoding. Objects are strongly typed and editing environments
+have advanced such that they detect a type error long before you can run a compile. So nowadays
+Hungarian Notation and other forms of type encoding are simply impediments.
+
+####    6.2 Member_prefixes
+You don't need prefix variables with *m_* anymore. Your classes and functions should be small
+enough that you don't need them. 
+
+####    6.3 Interfaces and Implementations
+When you have an abstract class and an implementation of that class with the same name, the 
+author advises to put the prefix before the implementation and not otherwise. 
+
+
+
