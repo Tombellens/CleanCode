@@ -32,7 +32,7 @@ E.G. A board-game where certain cells are flagged
 ```
 
 
-This is a bad example. What kind of things are in theList? What is the significance of the
+This is a bad example. What kind of things are in *theList?* What is the significance of the
 value 4? How would I use the list being returned? 
 Following example does the same but has better naming: 
 
@@ -56,7 +56,7 @@ E.G.
     String[] accountList = new String[];
 ```
 
-This is bad naming. Do not refer to a grouping of accounts as an accountList unless it's actually
+This is bad naming. Do not refer to a grouping of accounts as an *accountList* unless it's actually
 a List. Better would be: 
 
 ```java
@@ -126,6 +126,41 @@ enough that you don't need them.
 ####    6.3 Interfaces and Implementations
 When you have an abstract class and an implementation of that class with the same name, the 
 author advises to put the prefix before the implementation and not otherwise. 
+
+### 7. Avoid Mental Mapping
+Readers shouldn't have to mentally translate your names into other names they already know. This is
+a problem with single-letter variable names. Certainly a loop counter may be named *i* or *j* or *k* 
+(though never *l* !) **if its scope is very small and no other names can conflict with it .** In most other contexts a
+single-letter name is a poor choice: it's just a place holder that the reader must mentally map to the actual concept.
+
+### 8. Class Names
+Classes and objects should have noun or noun phrase names  like *Customer*, *WikiPage*, *Account* and *AddressParser*.
+Avoid words like *Manager*, *Processor*, *Data* or *Info* in the name of a class. A class name should not be a verb.
+
+### 9. Method Names
+Methods should have verbs or verb phrase names like *postPayment*, *deletePage* or *save*. Accessors, mutators and predicates
+should be named for their value prefixed with *get*, *set* and *is*. 
+
+```java
+String name = employee.getName();
+customer.setName("Mike");
+if (payCheck.isPosted())...
+```
+When constructors are overloaded, use static factory methods with names that describe the arguments.
+
+E.G.
+
+```java
+Complex fulcrumPoint = new Complex(23.0);
+```
+
+This is an overloaded constructor that can take different types of arguments. It's better to make a static 
+factory method with a name that describes the argument. 
+
+```java
+Complex fulcrumPoint = Complex.FromRealNumber(23.0)
+```
+Consider enforcing the use of this factory method by making the corresponding constructor private.
 
 
 
