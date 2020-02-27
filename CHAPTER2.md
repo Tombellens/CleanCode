@@ -65,3 +65,45 @@ a List. Better would be:
     String[] accountGroup = new String[];                   
 ```
 
+### 3. Make Meaningful Distinctions
+
+Programmers create problems for themselves when they write code solely to satisfy a compiler 
+or interpreter. For example, because you can't use the same name to refer to two different things
+in the same scope, you might be tempted to to change one name in an arbitrary way. 
+
+E.G. You need to copy a one char-array into another char-array
+
+```java
+    public static void copyChars(char a1[], char a2[]){
+        for (int i = 0; i < a1.length; i++){
+            a2[i] = a1[i];
+}
+}
+```
+
+These names are not disinformative, they are noninformative, they provide no clue to the author's
+intention. Better would be:
+
+```java
+    public static void copyChars(char source[], char destination[]){
+        for (int i = 0; i < source.length; i++){
+            destination[i] = source[i];
+}
+}
+```
+
+### 4. Use Pronounceable Names
+
+If you can't pronounce the name of a variable, you can't discuss it without sounding like an idiot. The variable-name
+*genymdhms* is not a good name.
+
+### 5. Use Searchable Names
+
+Single-letter names and numeric constants have a particular problem in that they are not easy
+to locate across a body of text. One might easily grep for *MAX_CLASSES_PER_STUDENT* but the number 7 could be 
+more troublesome. 
+
+The author's personal preference is that single letter names can ONLY be used as 
+local variable inside short methods. 
+
+The length of a name should correspond to the size of its scope. 
