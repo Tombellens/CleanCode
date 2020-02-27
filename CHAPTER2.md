@@ -20,7 +20,7 @@ you why it exists, what is does and how it is used.
 
 If a name requires a comment, then the name does not reveal its intent.
 
-E.G.
+E.G. A board-game where certain cells are flagged
 ```java
   public List<int[]> getThem(){  
     List<int[]> list1 = new ArrayList<int[]>();
@@ -44,6 +44,24 @@ Following example does the same but has better naming:
         list1.add(x);
     return list1;
   }
-  }
+```
+
+### 2. Avoid Disinformation
+
+Programmers must avoid leaving false clues that obscure the meaning of code. 
+
+E.G. 
+
+```java
+    String[] accountList = new String[];
+```
+
+This is bad naming. Do not refer to a grouping of accounts as an accountList unless it's actually
+a List. Better would be: 
+
+```java
+    String[] accounts = new String[];
+    String[] accountArray = new String[];
+    String[] accountGroup = new String[];                   
 ```
 
