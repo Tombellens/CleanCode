@@ -71,7 +71,7 @@ Programmers create problems for themselves when they write code solely to satisf
 or interpreter. For example, because you can't use the same name to refer to two different things
 in the same scope, you might be tempted to to change one name in an arbitrary way. 
 
-E.G. You need to copy a one char-array into another char-array
+E.G. You need to copy a char-array into another char-array
 
 ```java
     public static void copyChars(char a1[], char a2[]){
