@@ -39,3 +39,33 @@ function are all at the same level of abstraction.
 The code should read like a top-down narrative. We want every function to be followed by those at the next level
 of abstraction so that we can read the program, descending one level of abstraction at a time as we read down
 the list of functions.
+
+```java
+  private void includeSetupAndTearDownPages() throws Exception{
+        includeSetupPages();
+        includePageContent();
+        updatePageContent();
+  }
+
+  private void includeSetupPages() throws Exception{
+        includeSuiteSetupPage();
+        includeSetupPage();
+}
+
+  private void includeSuiteSetupPage(){
+        //Code for the includeSuiteSetup
+}
+
+ private void includeSetupPage(){
+        //Code for the includeSetup
+}
+
+ private void includePageContent(){
+        //Code for the includePageContent();
+}
+
+ private void updatePageContent(){
+        //Code for the updatePageContent();
+}
+```
+
