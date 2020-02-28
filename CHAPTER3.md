@@ -20,7 +20,7 @@ hardly ever be 20 lines long.
 
 #### 1.1 Blocks and Indenting
 
-This implies that blocks within *if*-statements, *else*-statements, *while*-stattements and so on should be
+This implies that blocks within *if*-statements, *else*-statements, *while*-statements and so on should be
 one line long. Probably that line should be a function call. Not only does this keep the enclosing function 
 small, but it also adds documentary value because the function called within the block can have a nicely descriptive
 name.
@@ -41,13 +41,13 @@ of abstraction so that we can read the program, descending one level of abstract
 the list of functions.
 
 ```java
-  private void includeSetupAndTearDownPages() throws Exception{
+  private void includeSetupAndTearDownPages(){
         includeSetupPages();
         includePageContent();
         updatePageContent();
-  }
+}
 
-  private void includeSetupPages() throws Exception{
+  private void includeSetupPages(){
         includeSuiteSetupPage();
         includeSetupPage();
 }
@@ -68,4 +68,67 @@ the list of functions.
         //Code for the updatePageContent();
 }
 ```
+
+#### 3.2 Switch Statements
+It 's hard to make a small *switch* statement. It's also hard to make a *switch* statement
+that does one thing. Unfortunately we can't always avoid *switch* statements, but we can make
+sure that each *switch* statement is buried in a low-level class and is never repeated. 
+
+The author's general rule for *switch* statements is that they can be tolerated if they appear 
+only once, are used to create polymorphic objects, and are hidden behind an inheritance relationship so that the rest of the 
+system can't see them. 
+
+
+
+### 4. Use Descriptive Names
+The smaller and more focussed a function is, the easier it is to choose a descriptive
+name. Don't be afraid to make a name long. A long descriptive name is better than a
+long descriptive comment.
+
+### 5. Function Arguments
+The ideal number of arguments for a function is zero (niladic). Next comes one (monadic), followed
+by two (dyadic). Three arguments (triadic) should be avoided where possible. More than three
+(polyadic) requires very special justification- and then shouldn't be used anyway.
+
+Arguments are hard because they take a lot of conceptual power and aren't easy to test.
+
+#### 5.1 Common Monadic Forms
+There are two very common reasons to pass a single argument into a function. You may be
+asking a question about that argument, as in *boolean fileExists("MyFile")*. Or
+you may be operating on that argument, transforming it into something else and
+returning it. For example, *InputStream fileOpen ("MyFile")* transforms a file name
+*String* into an *InputStream* return value.
+
+Try to avoid any monadic functions that don't follow these forms.Using an output argument 
+instead of a return value for a transformation is confusing. If a function is going to
+transform its input argument, the transformation should appear as the return value.
+
+#### 5.2 Flag Arguments
+Passing a boolean into a function is a truly terrible practice. It immediately complicates
+the signature of the method, loudly proclaiming that this function does more than one thing.
+It does one thing if the flag is true and another if the flag is false.
+
+#### 5.3 Dyadic Functions
+Dyads aren't evil and you will certainly have to write them. However, you should be aware
+that they come at a cost and should take advantage of what mechanisms may available to you
+to convert them into monads.
+
+
+E.G. This is a perfectly reasonable example
+```java
+ Point p = new Point(0,0);
+```
+
+This, on the other hand, is rather confusing
+
+```java
+ writeField(output-Stream, name);
+```
+The reading requires a short pause until we learn to ignore the first parameter.
+The parts we ignore are where the bugs will hide. Better would be:
+
+```java
+ writeField(name);
+```
+
 
