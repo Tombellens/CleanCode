@@ -9,7 +9,6 @@
 7. Command Query Separation
 8. Exceptions vs. Error Codes
 9. Duplication
-10. Structured Programming
 
 ---
 
@@ -130,5 +129,53 @@ The parts we ignore are where the bugs will hide. Better would be:
 ```java
  writeField(name);
 ```
+#### 5.4 Triads
+Functions that take three arguments are significantly harder to understand than dyads.
+The issues of ordering, pausing and ignoring are more than doubled. The author suggests
+to think very carefully before creating a triad.
 
+#### 5.5 Argument Objects
+When a function seems to need more than two or three arguments, it is likely that some of
+those arguments ought to be wrapped into a class of their own. Consider the difference
+between the two following declarations
+
+```java
+    Circle makeCircle(double x, double y, double radius);
+    Circle makeCircle(Point center, double radius);
+```
+
+### 6. (Have No) Side Effects
+
+A side effect is when your function ('s name) promises to do one thing but it also does other 
+(hidden) things. E.G. When your function makes unexpected changes to the variables of 
+its own class. Functions with side effects can have dangerous implications for your program.
+
+#### 6.1 Output Arguments
+
+In general output arguments should be avoided. If your function must change the state of 
+something, have it change the state of its owning object.
+
+### 7. Command Query Separation
+
+Functions should either do something or answer something, but not both. Either your 
+function should change the state of an object, or it should return some information
+about that object.
+
+### 8. Prefer Exceptions to Returning Error Codes
+
+Error codes need to be handled immediately and are a subtle violation of command query
+separation. If you use exceptions instead of returned error codes, then the error processing
+code can be separated from the happy path code and can be simplified.
+
+#### 8.1 Extract Try/Catch Blocks
+
+*Try/catch* blocks are ugly in their own right. They confuse the structure of the code 
+and mix error processing with normal processing. It is better to extract the bodies of 
+the *try* and *catch* blocks out into functions of their own.
+
+### 9. Don't repeat yourself
+
+Duplication is a problem because it bloats the code and will require four-fold modification
+should the algorithm ever have to change. It is also a four-fold opportunity for an 
+error of omission. 
 
